@@ -69,18 +69,19 @@
                                 Foreground="{TemplateBinding Foreground}"
                                 Content="{TemplateBinding Label}"
                                 TextWrapping="Wrap" />
-                            <ui:ContentPresenterEx
+                            <TextBlock
                                 x:Name="OverflowTextLabel"
                                 Margin="12,0,12,0"
+                                Padding="{DynamicResource AppBarButtonOverflowTextLabelPadding}"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Center"
                                 FontFamily="{TemplateBinding FontFamily}"
                                 FontSize="{DynamicResource ControlContentThemeFontSize}"
-                                Foreground="{TemplateBinding Foreground}"                                
-                                TextBlock.TextAlignment="Left"
+                                Foreground="{TemplateBinding Foreground}"
+                                Text="{TemplateBinding Label}"
+                                TextAlignment="Left"
                                 TextWrapping="NoWrap"
                                 Visibility="Collapsed" />
-                                <!--Content="{TemplateBinding Label}"--><!--Padding="{DynamicResource AppBarButtonOverflowTextLabelPadding}"-->
                             <TextBlock
                                 x:Name="KeyboardAcceleratorTextLabel"
                                 Grid.Column="1"
@@ -189,9 +190,6 @@
                             <Setter TargetName="ContentViewbox" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="TextLabel" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="OverflowTextLabel" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="TextLabel" Property="Content" Value="{x:Null}" />
-                            <Setter TargetName="OverflowTextLabel" Property="Content" Value="{TemplateBinding Label}" />
-
                         </Trigger>
                         <!--  OverflowWithToggleButtons  -->
                         <Trigger SourceName="ApplicationViewStatesListener" Property="CurrentStateName" Value="OverflowWithToggleButtons">
@@ -199,8 +197,6 @@
                             <Setter TargetName="AppBarButtonInnerBorder" Property="Margin" Value="{DynamicResource AppBarButtonInnerBorderOverflowMargin}" />
                             <Setter TargetName="ContentViewbox" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="TextLabel" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="TextLabel" Property="Content" Value="{x:Null}" />
-                            <Setter TargetName="OverflowTextLabel" Property="Content" Value="{TemplateBinding Label}" />
                             <Setter TargetName="OverflowTextLabel" Property="Visibility" Value="Visible" />
                             <Setter TargetName="OverflowTextLabel" Property="Margin" Value="38,0,12,0" />
                         </Trigger>
@@ -215,8 +211,6 @@
                             <Setter TargetName="ContentViewbox" Property="Margin" Value="12,0,12,0" />
                             <Setter TargetName="TextLabel" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="OverflowTextLabel" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="TextLabel" Property="Content" Value="{x:Null}" />
-                            <Setter TargetName="OverflowTextLabel" Property="Content" Value="{TemplateBinding Label}" />
                             <Setter TargetName="OverflowTextLabel" Property="Margin" Value="38,0,12,0" />
                         </Trigger>
                         <!--  OverflowWithToggleButtonsAndMenuIcons  -->
@@ -230,8 +224,6 @@
                             <Setter TargetName="ContentViewbox" Property="Margin" Value="38,0,12,0" />
                             <Setter TargetName="TextLabel" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="OverflowTextLabel" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="TextLabel" Property="Content" Value="{x:Null}" />
-                            <Setter TargetName="OverflowTextLabel" Property="Content" Value="{TemplateBinding Label}" />
                             <Setter TargetName="OverflowTextLabel" Property="Margin" Value="76,0,12,0" />
                         </Trigger>
                         <!--#endregion-->
